@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const DB = require("./db"); // INITILIZE DATABASE
 const moment = require('moment');
 const today = moment();
+const PORT = process.env.PORT || 8081;
 const  userSchema = new mongoose.Schema({
     amount: {
     type: String
@@ -117,6 +118,6 @@ const Lisence = mongoose.model('lisence', lisSchema);
   })
  
 
-http.listen(3000, function(){
+http.listen(PORT, function(){
     console.log('listening on *:8080');
 });
